@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>To-Do List App</title>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <h2>Nama: Nanda</h2>
+            <h4>Jabatan: Manager</h4>
+        </div>
+        <div class="time">
+            <div class="tanggal">
+                <h4>Tanggal : &nbsp;</h4>
+            <h5 id="current-date"></h5>
+            </div>
+            <div class="waktu">
+                <h4>Waktu : &nbsp;</h4>
+            <h5 id="current-time"></h5>
+            </div>
+        </div>
+    <div class="title">
+        <h2>Tambah Tugas</h2>
+    </div>
+        <div class="form">
+            <label for="priority">Level Prioritas</label>
+            <select id="priority">
+                <option value="">Pilih Level</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <label for="task">Tugas</label>
+            <textarea id="task" placeholder="Tuliskan tugas di sini"></textarea>
+            <button id="btnSubmit" onclick="addTask()">Submit</button>
+        </div>
+        <div class="todo-list">
+            <h3><u>To-Do List</u></h3>
+              <table border="1" style="width: 100%;">
+                <tr>
+                    <th>check</th>
+                    <th>Level Prioritas</th>
+                    <th>Tugas</th>
+                    <th>Tugas Dibuat</th>
+                    <th>aksi</th>
+                </tr>
+                <tbody id="todo">
+              <!-- daftar tugas -->
+                </tbody>
+            </table>
+        </div>
+        <div class="done-list">
+            <h3><u>Tugas Selesai</u></h3>
+            <table border="1" style="width: 100%;">
+                <tr>
+                    <th>check</th>
+                    <th>Level Prioritas</th>
+                    <th>Tugas</th>
+                    <th>Tugas selesai</th>
+                    <th>aksi</th>
+                </tr>
+                <tbody id="done">
+                    <!-- daftar tugas yang selesai -->
+                </tbody>
+            </table>
+        </div>
+        <div id="btnDelete-list-all" >
+            <button onclick="deleteAllTasks()">Hapus Semua Tugas</button>
+        </div>
+    </div>
+    
+    <script type='text/javascript' src='script.js' >  </script>
+</body>
+</html>

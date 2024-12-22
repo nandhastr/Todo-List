@@ -1,0 +1,96 @@
+.checkBox{
+    display: flex;
+}
+ body { 
+    font-family: Arial, sans-serif; 
+}
+        
+ .container { 
+    border: 1px solid #7a7979;
+    max-width: 600px; 
+    margin: 0 auto; 
+    padding-bottom: 10rem;
+    border-radius: 8px;
+}
+        
+ .profile { 
+    background: cyan;
+    text-align: center; 
+    margin-bottom: 20px; 
+    border-radius: 8px;
+    padding: 2px; 
+}
+.tanggal, .waktu {
+    display: flex;
+    margin: 0px 5px;
+}
+.title, h2, h3{
+    justify-content: center;
+    text-align: center;
+}
+.form {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+    padding: 10px;
+    background-color: #00FFFF; 
+    border-radius: 8px; 
+}
+#btnSubmit{
+    border-radius: 10px;
+}
+#btnSubmit:hover{
+    background-color: #939393;
+    
+}
+.form label {
+    font-weight: bold; 
+}
+
+.form select,
+.form textarea,
+.form button {
+    border-radius: 10px;
+    border: none;
+    width: 100%; 
+    padding: 5px;
+    box-sizing: border-box;
+}
+table{
+    border-radius: 10px;
+    border-collapse: collapse;
+
+}
+table th, td {
+    padding: 10px;
+}
+table th{
+    background: #7a7979;
+}
+table tr:hover{
+    background: #cdcbcb;
+}
+#btn-hapus {
+    padding: 10px;
+    background-color: red;
+    height: fit-content;
+    width: fit-content;
+    border: none;
+    border-radius: 10px;
+}
+#btn-hapus:hover, #btnDelete-list-all button:hover{
+    color: white;
+    background-color: #452828
+}
+ #btnDelete-list-all { 
+    text-align: center; 
+    margin-top: 20px; 
+}
+ #btnDelete-list-all button { 
+   padding: 10px;
+    background-color: red;
+    height: fit-content;
+    width: fit-content;
+    border: none;
+    border-radius: 10px;
+}
