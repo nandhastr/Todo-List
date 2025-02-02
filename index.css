@@ -102,16 +102,19 @@ table tr:hover{
     background: #cdcbcb;
 }
 #btn-hapus {
-    padding: 10px;
-    background-color: red;
-    height: fit-content;
-    width: fit-content;
+    background: none;
     border: none;
-    border-radius: 10px;
+    color: red;
 }
-#btn-hapus:hover, #btnDelete-list-all button:hover{
+#btn-hapus:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+#btnDelete-list-all button:hover{
     color: white;
-    background-color: #452828
+    background-color: #452828;
+    transition: all 0.3s ease-in-out;
+    
 }
  #btnDelete-list-all { 
     text-align: center; 

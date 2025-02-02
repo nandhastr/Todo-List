@@ -104,7 +104,7 @@ function renderTasks() {
             <td>${task.task}</td>
             <td>${task.dateSubmit}</td>
             <td id="done-date">${task.date}</td>
-            <td><button id="btn-hapus" onclick="deleteTask(this)">Hapus</button></td>
+            <td><button id="btn-hapus" onclick="deleteTask(this)"><i class="fa-solid fa-trash"></i></button></td>
         `;
 
        
