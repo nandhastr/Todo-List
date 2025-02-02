@@ -16,6 +16,7 @@ setInterval(updateTime, 1000);
 function addTask() {
     const priority = document.getElementById("priority").value;
     const task = document.getElementById("task").value;
+    const date = document.getElementById("date").value;
 
     if (!priority || priority === "") {
         alert("Prioritas tidak boleh kosong!");
@@ -26,11 +27,16 @@ function addTask() {
         alert("Tugas tidak boleh kosong!");
         return;
     }
+    if (!date || date.trim() === "") {
+        alert("Tanggal tidak boleh kosong!");
+        return
+    }
 
     const newTask = {
         priority,
         task,
-        date: new Date().toLocaleString(),
+        date,
+        dateSubmit: new Date().toLocaleString(),
         done: false
     };
 
@@ -41,6 +47,7 @@ function addTask() {
     renderTasks();
     document.getElementById("priority").value = ""; 
     document.getElementById("task").value = ""; 
+    document.getElementById("date").value = ""; 
 }
 
 // memindahkan tugas ke daftar Done
@@ -53,7 +60,7 @@ function checkTask(checkbox) {
     task.done = checkbox.checked;
 
     if (checkbox.checked) {
-        task.date = new Date().toLocaleString("id-ID", {
+        task.dateSubmit = new Date().toLocaleString("id-ID", {
             day: "2-digit",
             month: "2-digit",
             year: "numeric",
@@ -83,7 +90,7 @@ function renderTasks() {
     const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     const todoList = document.getElementById("todo");
     const doneList = document.getElementById("done");
-
+    
     todoList.innerHTML = "";
     doneList.innerHTML = "";
 
@@ -94,17 +101,37 @@ function renderTasks() {
             <td><input type="checkbox" onchange="checkTask(this)" ${task.done ? "checked disabled" : ""}></td>
             <td>${task.priority}</td>
             <td>${task.task}</td>
-            <td>${task.date}</td>
+            <td>${task.dateSubmit}</td>
+            <td id="done-date">${task.date}</td>
             <td><button id="btn-hapus" onclick="deleteTask(this)">Hapus</button></td>
         `;
 
+       
+        todoList.appendChild(row);
+        
         if (task.done) {
-            doneList.appendChild(row);
-        } else {
-            todoList.appendChild(row);
-        }
+            row.style.color = "#16C47F";
+            const doneRow = row.cloneNode(true);
+            doneList.appendChild(doneRow);
+            row.classList.add("lineThrough");
+            row.style.color = "";
+
+            const doneDate = doneRow.querySelector("#done-date");
+            doneDate.textContent = new Date().toLocaleDateString();
+
+        } 
     });
 }
+
+
+
+
+
+
+
+
+
+
 
 // Panggil fungsi tugas saat halaman dimuat
 document.addEventListener("DOMContentLoaded", renderTasks);
