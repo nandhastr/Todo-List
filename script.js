@@ -45,6 +45,7 @@ function addTask() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 
     renderTasks();
+    
     document.getElementById("priority").value = ""; 
     document.getElementById("task").value = ""; 
     document.getElementById("date").value = ""; 
@@ -122,15 +123,6 @@ function renderTasks() {
         } 
     });
 }
-
-
-
-
-
-
-
-
-
 
 
 // Panggil fungsi tugas saat halaman dimuat

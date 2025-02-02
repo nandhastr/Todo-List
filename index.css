@@ -13,7 +13,7 @@
 }
         
  .container { 
-    border: 1px solid #7a7979;
+    /* border: 1px solid #7a7979; */
     max-width: 600px; 
     margin: 0 auto; 
     padding-bottom: 10rem;
@@ -78,6 +78,7 @@ label {
 }
 
 .form select,
+.form input,
 .form textarea,
 .form button {
     border-radius: 10px;
